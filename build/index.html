@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Greate Start React</title>
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const baseURL = window.location.host.includes("localhost")
+      ? "http://localhost:3000/"
+      : "URL_TO_DEPLOYED_APP";
+    const bundleScript = document.createElement('script');
+    bundleScript.src = baseURL + "dist/bundle.js";
+    document.getElementsByTagName('script')[0].parentNode.appendChild(bundleScript);
+  </script>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>

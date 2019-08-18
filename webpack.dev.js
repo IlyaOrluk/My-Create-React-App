@@ -8,9 +8,12 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        include: path.appSrc,
+        loader: require.resolve('babel-loader'),
+        options: {
+          cacheDirectory: true,
+          plugins: ['react-hot-loader/babel'],
+        },
       },
       {
         test: /\.(js|jsx)$/,
@@ -19,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader", 'postcss-loader']
       },
       {
         test: /\.scss$/,
@@ -36,6 +39,9 @@ module.exports = {
               includePaths: ['absolute/path/a', 'absolute/path/b'],
             },
           },
+          { 
+            loader: 'postcss-loader'
+          }
         ],
       },
       {
@@ -47,7 +53,12 @@ module.exports = {
       }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+   },
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",

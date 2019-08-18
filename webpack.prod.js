@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
@@ -22,10 +21,11 @@ module.exports = {
           {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                  minimize: false
+                  minimize: true
               }
           },
-          { loader: "css-loader" }
+          { loader: "css-loader" },
+          { loader: 'postcss-loader' }
       ]
       },
       {
@@ -33,6 +33,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ],
       },

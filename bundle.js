@@ -486,7 +486,7 @@ const _default = Header;
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "/images/logo.png";
+module.exports = __webpack_require__.p + "./images/logo.png";
 
 /***/ }),
 /* 9 */

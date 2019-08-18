@@ -4,6 +4,8 @@ Hello World!
 
 Greate Start React is a simple starting point for Single Page Apps using React, Babel, and Webpack.
 
+View Demo: https://ilyaorluk.github.io/My-Create-React-App/
+
 ## Getting Started
 
 Clone this repo and install dependencies with `npm install`.

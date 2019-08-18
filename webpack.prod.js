@@ -42,7 +42,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: "file-loader",
         options: {
-          name: "/images/[name].[ext]"
+          name: "./images/[name].[ext]"
         }
       }
     ]

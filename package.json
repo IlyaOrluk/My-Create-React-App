@@ -1,11 +1,13 @@
 {
   "name": "react-app",
   "version": "1.0.0",
+  "homepage": "https://ilyaorluk.github.io/My-Create-React-App/",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --config webpack.dev.js",
     "build": "webpack --mode production --config webpack.prod.js",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ilya Orluk",
@@ -13,6 +15,7 @@
   "dependencies": {
     "@hot-loader/react-dom": "^16.9.0",
     "corejs": "^1.0.0",
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hot-loader": "^4.12.11",
